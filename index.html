@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Форма реєстрації</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="login-container">
+        <div class="form-header">
+            <h1>Створення акаунта</h1>
+            <p>Заповніть форму для реєстрації</p>
+        </div>
+
+        <form>
+            <div class="input-group">
+                <label for="name">Ім'я</label>
+                <input type="text" id="name" name="name"
+                       placeholder="Введіть ваше ім'я" required>
+            </div>
+
+            <div class="input-group">
+                <label for="surname">Прізвище</label>
+                <input type="text" id="surname" name="surname"
+                       placeholder="Введіть ваше прізвище" required>
+            </div>
+
+            <div class="input-group">
+                <label for="email">Електронна пошта</label>
+                <input type="email" id="email" name="email"
+                       placeholder="example@gmail.com" required>
+            </div>
+
+            <div class="input-group">
+                <label for="password">Пароль</label>
+                <input type="password" id="password" name="password"
+                       placeholder="Введіть пароль" required>
+            </div>
+
+            <div class="show-password">
+                <input type="checkbox" id="showPassword">
+                <label for="showPassword">Показати пароль</label>
+            </div>
+
+            <button type="submit">Зареєструватися</button>
+        </form>
+
+        <p class="footer-text">
+            Вже маєте акаунт? <a href="#">Увійти</a>
+        </p>
+    </div>
+
+    <script>
+        const password = document.getElementById("password");
+        const showPassword = document.getElementById("showPassword");
+
+        showPassword.addEventListener("change", function () {
+            if (this.checked) {
+                password.type = "text";
+            } else {
+                password.type = "password";
+            }
+        });
+    </script>
+
+</body>
+</html>
